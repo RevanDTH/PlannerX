@@ -1,0 +1,176 @@
+# .gitignore for a C++ cross-platform project
+
+# Build directories
+/build/
+/build-*/
+/out/
+/bin/
+/dist/
+/cmake-build-*/
+/_InstallArea/
+/Install/
+/Debug/
+/Release/
+/release/
+/RelWithDebInfo/
+/MinSizeRel/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
+compile_commands.json
+*.cmake.user
+
+# IDEs & editors
+.vscode/
+.vscode-test/
+.idea/
+*.iml
+*.iws
+*.ipr
+*.sln
+*.suo
+*.vcxproj.user
+*.vcxproj.filters
+*.ncb
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio caches & build products
+ipch/
+*.ilk
+*.meta
+*.obj
+*.o
+*.pch
+*.pdb
+*.idb
+*.class
+
+# Compiled object files, libraries, binaries
+*.o
+*.ko
+*.obj
+*.elf
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Static analysis / coverage / profiling
+*.gcda
+*.gcno
+*.gcov
+*.prof
+*.profdata
+*.lcov
+coverage/
+coverage.*
+*.coverdb
+
+# Packaging
+*.7z
+*.dmg
+*.gz
+*.zip
+*.tar
+*.tar.gz
+
+# Generated files from configure/autotools
+config.log
+config.status
+configure
+Makefile.in
+*.rej
+
+# Dependency managers / build tools
+conanbuildinfo.*
+conaninfo.txt
+conan.lock
+conan_export.tgz
+vcpkg_installed/
+buildtrees/
+packages/
+bintray/
+*.cmake.orig
+
+# Third-party/binary dependencies (optional — uncomment if vendored libs are not tracked)
+# vendor/
+# third_party/
+
+# Logs and runtime files
+*.log
+*.trace
+*.pid
+*.seed
+
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor swap/temp files
+*~
+*.swp
+*.swo
+*.swn
+.*.sw?
+.#*
+#*#
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.orig
+
+# CCache
+.ccache/
+
+# Qt Creator
+*.autosave
+*.user
+*.user.*
+*.pro.user
+qtcreator/
+qtc_* 
+
+# macOS specific
+*.DS_Store
+.Trash-*
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Misc
+tags
+TAGS
+cscope.*
+ctags.out
+ctags
+
+# Sanitizer / ASAN / LSAN / TSAN outputs
+*.sanitize
+asan.log
+lsan.log
+tsan.*
+ubsan.*
+
+# End of file
