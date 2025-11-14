@@ -38,8 +38,8 @@ There are no prequisites if you download the latest build from github. If you wa
 If you want to build the tool yourself and therefore need the source-code, just do the following:
 ```bash
 # clone repository
-git clone <repo-url>
-cd <project-directory>
+git clone https://github.com/RevanDTH/PlannerX.git
+cd PlannerX
 ```
 
 ### Using
