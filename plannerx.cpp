@@ -14,6 +14,7 @@
 std::map<int, std::string> tasklist = {};
 LPCSTR saveFilePath = "C:\\ProgramData\\PlannerX"; 
 LPCSTR saveFile = "C:\\ProgramData\\PlannerX\\savefile.plx"; 
+LPCSTR exePath = "C:\\Program Files (x86)\\PlannerX\\plannerx.exe";
 
 
 void setup(){
@@ -23,6 +24,19 @@ void setup(){
     cout << "Press [ENTER] to continue with the setup or press [ctrl] + [c] to abort this action." << endl;
     cin.get();
     system("cls");
+
+    cout << "Moving executable to " << exePath << endl;
+
+    char currentExePathBuf[MAX_PATH];
+    DWORD pathLen = GetModuleFileNameA(NULL, currentExePathBuf, MAX_PATH);
+    if (pathLen == 0) {
+        std::cout << "Failed to get current executable path. Error: " << GetLastError() << std::endl;
+    } else {
+        std::cout << "Current executable: " << currentExePathBuf << std::endl;
+    }
+    MoveFileA(currentExePathBuf,exePath);
+
+
     cout << "Creating directory for your savefile under " << saveFilePath << " . . ." << endl;
     if (!CreateDirectoryA(saveFilePath,NULL))
     {
@@ -39,6 +53,11 @@ void setup(){
     } else {
         cout << "Savefile created!" << endl;
         CloseHandle(hFile);
+    }
+
+    cout << "Adding PlannerX to enviromental variable . . ." << endl;
+    if(!SetEnvironmentVariableA("plannerx",exePath)){
+        cout << "Failed to set enviromental variable, please run the terminal with elevated privileges!" << endl;
     }
     
 }
