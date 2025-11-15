@@ -11,6 +11,7 @@ A lightweight, console based task planner for Windows, MacOS (Soon) and Linux (S
     - [Installation](#installation)  
 - [Configuration](#configuration)  
 - [Using](#using)  
+- [Known Bugs]()
 - [Contributing](#contributing)   
 - [License](#license)  
 - [Contact](#contact)
@@ -49,6 +50,16 @@ The first time you use PlannerX, it is recommended to start it with the -setup p
 ```bash
 plannerx -setup
 ```
+
+### Known Bugs
+
+There are some known bugs in in PlannerX. This following list shows all the Bugs that are known and also have a corresponding issue already opened, so please don't open another Issue if you encounter this bug. 
+
+| Bug | Issue |
+|-----|-------|
+|  Program crashing when entering non-integer values to the main menu   |   To-do    |
+|     |       |
+|     |       |
 
 ## Contributing
 
