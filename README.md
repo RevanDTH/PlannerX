@@ -57,9 +57,7 @@ There are some known bugs in in PlannerX. This following list shows all the Bugs
 
 | Bug | Issue |
 |-----|-------|
-|  Program crashing when entering non-integer values to the main menu   |   To-do    |
-|     |       |
-|     |       |
+|  Program crashing when entering non-integer values to the main menu   |    [Issue](https://github.com/RevanDTH/PlannerX/issues/1)   |
 
 ## Contributing
 
