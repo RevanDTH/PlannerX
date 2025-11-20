@@ -9,11 +9,11 @@
 #include <list>
 #include <limits>
 
-
 //global variables
 std::map<int, std::string> tasklist = {};
 LPCSTR saveFilePath = "C:\\ProgramData\\PlannerX"; 
 LPCSTR saveFile = "C:\\ProgramData\\PlannerX\\savefile.plx"; 
+LPCSTR exePath = "C:\\Program Files (x86)\\PlannerX\\plannerx.exe";
 
 
 void setup(){
@@ -23,6 +23,19 @@ void setup(){
     cout << "Press [ENTER] to continue with the setup or press [ctrl] + [c] to abort this action." << endl;
     cin.get();
     system("cls");
+
+    cout << "Moving executable to " << exePath << endl;
+
+    char currentExePathBuf[MAX_PATH];
+    DWORD pathLen = GetModuleFileNameA(NULL, currentExePathBuf, MAX_PATH);
+    if (pathLen == 0) {
+        std::cout << "Failed to get current executable path. Error: " << GetLastError() << std::endl;
+    } else {
+        std::cout << "Current executable: " << currentExePathBuf << std::endl;
+    }
+    MoveFileA(currentExePathBuf,exePath);
+
+
     cout << "Creating directory for your savefile under " << saveFilePath << " . . ." << endl;
     if (!CreateDirectoryA(saveFilePath,NULL))
     {
@@ -40,7 +53,24 @@ void setup(){
         cout << "Savefile created!" << endl;
         CloseHandle(hFile);
     }
+
+    string exePathStr = exePath;
+    size_t pos = exePathStr.find_last_of("\\/");
+    if (pos != string::npos) {
+        string dir = exePathStr.substr(0, pos);
+        string cmd = "setx PATH \"%PATH%;" + dir + "\"";
+        int res = system(cmd.c_str());
+        if (res != 0) {
+            cout << "Failed to update PATH. Command returned: " << res << endl;
+        } else {
+            cout << "PATH updated to include: " << dir << endl;
+        }
+    } else {
+        cout << "Could not determine directory from exePath: " << exePathStr << endl;
+    }
+
     
+
 }
 
 void loadTasks(){
@@ -123,6 +153,7 @@ int main(int argc, char const *argv[])
 
     if(hasArgument(argc,argv,"-setup")){
         setup();
+        exit(0);
     }
 
     loadTasks();
