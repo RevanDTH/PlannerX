@@ -36,6 +36,9 @@ There are no prequisites if you download the latest build from github. If you wa
 
 ### Installation
 
+Download the latest release from the [release tab](https://github.com/RevanDTH/PlannerX/releases) and run the PlannerX-Setup.exe file. This will install PlannerX and also automatically add PlannerX to the PATH.
+
+
 If you want to build the tool yourself and therefore need the source-code, just do the following:
 ```bash
 # clone repository
@@ -44,11 +47,10 @@ cd PlannerX
 ```
 
 ### Using
-
-The first time you use PlannerX, it is recommended to start it with the -setup parameter so that PlannerX can install itself correctly! You are able to use PlannerX without running the -setup parameter but then the savefile will be created in the same directory where the executable is located. Here is how you start PlannerX with the setup parameter: 
+To run Plannerx just type the following command into the console: 
 
 ```bash
-plannerx -setup
+plannerx
 ```
 
 ### Known Bugs
