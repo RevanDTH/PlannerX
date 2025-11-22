@@ -77,7 +77,11 @@ void createTask(std::string taskName){
 
 
 void solveTask(int taskID){
-    tasklist.erase(taskID);
+    if(tasklist.find(taskID) != tasklist.end()){
+        tasklist.erase(taskID);
+    }else{
+        std::cout << "Task not found!" << std::endl;
+    }
 }
 
 bool hasArgument(int argc, char const* argv[], const std::string& name)
@@ -154,14 +158,14 @@ int main(int argc, char const *argv[])
         }else
         {
             cin.clear();
+            cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
             continue;
         }
         
 
     }
     
-
-
+    
 
     return 0;
 }
