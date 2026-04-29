@@ -1,6 +1,6 @@
 # PlannerX
 
-A lightweight, console based task planner for Windows, MacOS (Soon) and Linux (Soon).
+A console based task planner for Windows, MacOS (Soon) and Linux (Soon).
 
 ## Table of Contents
 
